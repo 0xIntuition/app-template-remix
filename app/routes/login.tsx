@@ -177,7 +177,7 @@ export default function LoginIndexRoute() {
     <main className="flex min-h-screen flex-col items-center gap-y-12 p-8">
       <Header user={user} />
       <div className="mt-32 flex h-full w-full flex-col items-center gap-8">
-        <Card className="flex w-[728px] flex-col items-center gap-8 p-16">
+        <Card className="flex w-[92vw] max-w-[728px] flex-col items-center gap-8 p-16 text-center">
           <img src={templateAppIcon} className="h-24 w-24" />
           <div className="space-y-4">
             <h4 className="text-3xl font-semibold leading-none">

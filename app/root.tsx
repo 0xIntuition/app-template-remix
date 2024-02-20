@@ -134,10 +134,19 @@ export default function App() {
               modalSize="compact"
               theme={darkTheme()}
             >
-              <div className="relative flex h-screen w-full flex-col justify-between">
-                <div className="flex-1">
+              <div className="relative flex min-h-screen w-full flex-col justify-between antialiased">
+                <div className="z-10 flex-1">
                   <Outlet />
                 </div>
+                <div
+                  className="bg-grid-white/[0.05] absolute inset-0 z-0 border-b border-slate-100/5 bg-bottom"
+                  style={{
+                    maskImage:
+                      'linear-gradient(to top left, transparent, black)',
+                    WebkitMaskImage:
+                      'linear-gradient(to top left, transparent, black)',
+                  }}
+                />
               </div>
             </RainbowKitProvider>
           </WagmiConfig>
