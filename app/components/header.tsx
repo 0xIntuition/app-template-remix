@@ -26,7 +26,7 @@ export default function Header({ user }: HeaderProps) {
             <img
               src={templateBadge}
               alt="Intuition App Template"
-              className="h-6 w-auto"
+              className="h-6 w-auto shadow-md"
             />
           </div>
         </Link>
