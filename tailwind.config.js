@@ -41,7 +41,7 @@ module.exports = {
         'muted-foreground': 'var(--primary-500)',
 
         // Primary colors
-        gray: {
+        primary: {
           50: 'var(--primary-50)',
           100: 'var(--primary-100)',
           200: 'var(--primary-200)',

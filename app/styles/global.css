@@ -66,17 +66,18 @@
     body {
       @apply bg-background text-foreground;
       font-family: system-ui, sans-serif;
-      background-image: url('/images/background.png');
+      background-color: '#000000';
+      /* background-image: url('/images/background.png');
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: cover; */
     }
   }
 }
 
 @layer components {
   .tooltip {
-    @apply z-50 box-border w-max max-w-[100vw-10px] space-y-1 rounded-md border border-slate-100/20 bg-gray-950 px-2.5 py-1 text-xs font-medium text-gray-200 shadow-md shadow-black/5 ring-1 ring-black/5 backdrop-blur-md transition ease-in-out;
+    @apply bg-primary-950 text-primary-200 z-50 box-border w-max max-w-[100vw-10px] space-y-1 rounded-md border border-slate-100/20 px-2.5 py-1 text-xs font-medium shadow-md shadow-black/5 ring-1 ring-black/5 backdrop-blur-md transition ease-in-out;
   }
 
   html {
