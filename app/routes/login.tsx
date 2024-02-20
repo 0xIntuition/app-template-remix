@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react'
-import {
-  useFetcher,
-  useLoaderData,
-  useNavigation,
-  useSubmit,
-} from '@remix-run/react'
+import { useFetcher, useLoaderData, useSubmit } from '@remix-run/react'
 import { ActionFunctionArgs, LoaderFunction, json } from '@remix-run/node'
 import { DIDSession } from 'did-session'
 import { makeDomainFunction } from 'domain-functions'
@@ -39,12 +34,6 @@ const mutation = makeDomainFunction(schema)(async (values) => {
 
 interface FetcherData {
   didSessionError?: string
-  user?: User
-  token?: string
-  refreshToken?: string
-}
-
-interface LoaderData {
   user?: User
   token?: string
   refreshToken?: string
@@ -100,15 +89,14 @@ export const loader: LoaderFunction = async ({ request }) => {
 }
 
 export default function LoginIndexRoute() {
-  const { user, token, refreshToken } = useLoaderData<typeof loader>()
-  const navigation = useNavigation()
+  const { user } = useLoaderData<typeof loader>()
   const fetcher = useFetcher<FetcherData>()
-  const { isConnected, address } = useAccount()
   const submit = useSubmit()
+
+  const { isConnected, address } = useAccount()
   const { chain } = useNetwork()
   const { switchNetwork } = useSwitchNetwork()
   const { disconnect } = useDisconnect()
-
   const { data: walletClient } = useWalletClient()
 
   const [hasSigned, setHasSigned] = useState<boolean>(false)
@@ -124,8 +112,6 @@ export default function LoginIndexRoute() {
         setDidSession(didSesh.serialize())
         setHasSigned(true)
         fetcher.load(`/login?index&didSession=${didSesh.serialize()}`)
-        // fetcher.data?.token !== undefined &&
-        //   fetcher.data?.accessClaim?.subject.display_name.includes(didSession)
       }
     } catch (e) {
       window.alert(e)
@@ -136,7 +122,6 @@ export default function LoginIndexRoute() {
 
   async function handleSignOut() {
     setHasSigned(false)
-    // setAccessClaim(undefined)
     disconnect()
     fetcher.submit({}, { method: 'post', action: '/actions/auth/logout' })
   }
@@ -144,7 +129,6 @@ export default function LoginIndexRoute() {
     let formData = new FormData()
     formData.set('didSession', didSession)
     formData.set('wallet', walletClient?.account?.address as string)
-    // formData.set('accessClaim', accessClaim?.claim_id)
     submit(formData, {
       method: 'post',
     })

@@ -9,6 +9,7 @@ import {
 } from './ui/tooltip'
 import { cn } from '@/lib/utils/misc'
 
+//TODO: Update Links
 export default function GetStarted() {
   return (
     <div className="flex flex-col items-center space-y-12">
@@ -20,8 +21,10 @@ export default function GetStarted() {
         <TooltipProvider>
           <Tooltip delayDuration={0}>
             <TooltipTrigger asChild>
-              <Button size="lg-icon" variant="secondary">
-                <SparkleIcon className="stroke-current" />
+              <Button size="lg-icon" variant="secondary" asChild>
+                <a href="#" target="_blank" rel="noreferrer">
+                  <SparkleIcon className="stroke-current" />
+                </a>
               </Button>
             </TooltipTrigger>
             <TooltipContent className="px-2">
@@ -34,8 +37,10 @@ export default function GetStarted() {
         <TooltipProvider>
           <Tooltip delayDuration={0}>
             <TooltipTrigger asChild>
-              <Button size="lg-icon" variant="secondary">
-                <BookIcon className="stroke-current" />
+              <Button size="lg-icon" variant="secondary" asChild>
+                <a href="#" target="_blank" rel="noreferrer">
+                  <BookIcon className="stroke-current" />
+                </a>
               </Button>
             </TooltipTrigger>
             <TooltipContent className="px-2">
