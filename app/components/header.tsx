@@ -1,7 +1,7 @@
 import { Link, useFetcher } from '@remix-run/react'
 import IntuitionLogotype from '@/assets/intuition-logotype'
 import { useDisconnect } from 'wagmi'
-import templateBadge from '@images/template-badge.png'
+import apiKeyBadge from '@images/api-key-badge.png'
 import { AccountButton } from './account-button'
 import { User } from 'types/user'
 
@@ -24,8 +24,8 @@ export default function Header({ user }: HeaderProps) {
           <div className="flex items-center gap-4">
             <IntuitionLogotype />
             <img
-              src={templateBadge}
-              alt="Intuition App Template"
+              src={apiKeyBadge}
+              alt="Intuition API Key Portal"
               className="h-6 w-auto shadow-md"
             />
           </div>

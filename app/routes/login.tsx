@@ -19,7 +19,7 @@ import { Card } from '@/components/ui/card'
 import { isAuthedUser, login } from '@/lib/services/auth.server'
 import { formAction } from '@/lib/services/form.server'
 import { newDIDSessionFromWalletClient } from '@/lib/utils/siwe'
-import templateAppIcon from '@images/app-template-logo.png'
+import apiAppIcon from '@images/api-app-logo.png'
 
 import { User } from 'types/user'
 import GetStarted from '@/components/get-started'
@@ -162,7 +162,7 @@ export default function LoginIndexRoute() {
       <Header user={user} />
       <div className="mt-32 flex h-full w-full flex-col items-center gap-8">
         <Card className="flex w-[92vw] max-w-[728px] flex-col items-center gap-8 p-16 text-center">
-          <img src={templateAppIcon} className="h-24 w-24" />
+          <img src={apiAppIcon} className="h-24 w-24" />
           <div className="space-y-4">
             <h4 className="text-3xl font-semibold leading-none">
               Sign in to Intuition
@@ -171,6 +171,7 @@ export default function LoginIndexRoute() {
           </div>
           <ConnectButton size="lg" user={user} />
         </Card>
+        <div />
         <GetStarted />
       </div>
     </main>

@@ -38,10 +38,10 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [
     {
       title: data
-        ? 'Intuition App Template - Remix'
-        : 'Error | Intuition App Template - Remix',
+        ? 'Intuition API Key Portal'
+        : 'Error | Intuition API Key Portal',
     },
-    { name: 'description', content: `Start your Intuition journey.` },
+    { name: 'description', content: `Get started with Intuition API.` },
   ]
 }
 
@@ -139,7 +139,7 @@ export default function App() {
                   <Outlet />
                 </div>
                 <div
-                  className="bg-grid-white/[0.05] absolute inset-0 z-0 border-b border-slate-100/5 bg-bottom"
+                  className="absolute inset-0 z-0 border-b border-slate-100/5 bg-bottom bg-grid-white/[0.05]"
                   style={{
                     maskImage:
                       'linear-gradient(to top left, transparent, black)',

@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils/misc'
 import * as React from 'react'
 
-const SparkleIcon = React.forwardRef<
+const FastForwardIcon = React.forwardRef<
   HTMLOrSVGElement,
   React.HTMLAttributes<HTMLOrSVGElement>
 >(({ className, ...props }, ref) => (
@@ -15,12 +15,11 @@ const SparkleIcon = React.forwardRef<
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M22 12C15.0556 12 12 15.0556 12 22C12 15.0556 8.94444 12 2 12C8.94444 12 12 8.94444 12 2C12 8.94444 15.0556 12 22 12Z"
+      d="M12.3742 11.3303L4.75 5.5V18.5L12.3742 12.6697M12.75 5.5L21.25 12L12.75 18.5V5.5Z"
       stroke="current"
       strokeWidth="1.5"
+      strokeLinecap="square"
     />
   </svg>
 ))
-export default SparkleIcon
+export default FastForwardIcon
