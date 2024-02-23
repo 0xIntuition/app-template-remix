@@ -1,11 +1,11 @@
-import { requireAuthedUser } from '@/lib/services/auth.server'
-
-import { User } from 'types/user'
-
 import { LoaderFunctionArgs, json } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
+
+import { requireAuthedUser } from '@/lib/services/auth.server'
 import Header from '@/components/header'
 import GetStarted from '@/components/get-started'
+
+import { User } from 'types/user'
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const user = (await requireAuthedUser(request)) as User
