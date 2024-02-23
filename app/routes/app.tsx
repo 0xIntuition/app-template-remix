@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useAccount } from 'wagmi'
 import { disconnect } from '@wagmi/core'
 import { LoaderFunctionArgs, json } from '@remix-run/node'
+
 import { requireAuthedUser } from '@/lib/services/auth.server'
 import { User } from 'types/user'
 
